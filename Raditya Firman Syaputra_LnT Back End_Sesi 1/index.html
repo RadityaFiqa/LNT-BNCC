@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Restoran Bintang Sembilan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="header">
+        <div class="logo-container">
+            <img src="https://www.shutterstock.com/image-vector/translation-restaurant-name-padang-cuisine-600w-2078744242.jpg" alt="Logo Restoran Bintang Sembilan" class="logo" id="restaurant-logo">
+        </div>
+        <h1 id="restaurant-name">Restoran Bintang Sembilan</h1>
+        <p class="tagline" id="restaurant-tagline">Rasa Nusantara yang Autentik</p>
+    </div>
+
+    <!-- Main Content Container -->
+    <div class="main-container">
+        <!-- Left Side - Menu Sections -->
+        <div class="menu-container">
+            <!-- Menu Sections will be dynamically generated from JSON data -->
+            <div id="menu-container">
+                <!-- Menu sections will be inserted here by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Right Side - Fixed Cart -->
+        <div class="cart-sidebar">
+            <div class="cart-header">
+                <h2>🛒 Keranjang Belanja</h2>
+            </div>
+            <div class="cart-content">
+                <div class="cart-items" id="cart-items">
+                    <p class="empty-cart">Keranjang masih kosong. Pilih menu yang ingin dipesan!</p>
+                </div>
+                <div class="cart-total">
+                    <div class="total-line">
+                        <span>Subtotal:</span>
+                        <span id="subtotal">Rp 0</span>
+                    </div>
+                    <div class="total-line">
+                        <span>Pajak (10%):</span>
+                        <span id="tax">Rp 0</span>
+                    </div>
+                    <div class="total-line total-final">
+                        <span>Total:</span>
+                        <span id="total">Rp 0</span>
+                    </div>
+                </div>
+                <button class="process-order-btn" id="process-order-btn" onclick="showOrderForm()" disabled>
+                    Proses Pesanan
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Form Pemesanan Section (Hidden Initially) -->
+    <div class="order-section" id="order-section" style="display: none;">
+        <div class="order-container">
+            <h2>📝 Form Pemesanan</h2>
+            <form class="order-form" onsubmit="submitOrder(event)">
+                <div class="form-group">
+                    <label for="customer-name">Nama Pelanggan:</label>
+                    <input type="text" id="customer-name" name="customer-name" required placeholder="Masukkan nama lengkap Anda">
+                </div>
+                
+                <div class="form-group">
+                    <label for="customer-email">Email:</label>
+                    <input type="email" id="customer-email" name="customer-email" required placeholder="contoh@email.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="order-notes">Catatan Pesanan:</label>
+                    <textarea id="order-notes" name="order-notes" rows="4" placeholder="Tuliskan catatan tambahan untuk pesanan Anda"></textarea>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="cancel-btn" onclick="hideOrderForm()">Batal</button>
+                    <button type="submit" class="submit-btn">Pesan Sekarang</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer">
+        <p id="footer-copyright">&copy; 2024 Restoran Bintang Sembilan. Hak Cipta Dilindungi.</p>
+        <p id="footer-contact">Jl. Raya Nusantara No. 123, Jakarta Selatan | Telp: (021) 1234-5678</p>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
